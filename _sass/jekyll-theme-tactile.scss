@@ -406,3 +406,10 @@ footer a:hover {
   background-color: rgba(0, 100, 0, 0.7);
   color: white !important;
 }
+
+.lpgc-avatar {
+  transform: translateX(-125%) translateY(-45%);
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.33);
+}
