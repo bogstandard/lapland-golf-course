@@ -61,6 +61,20 @@
           el.replaceWith(link);
         }
       });
+
+      const githubs = document.querySelectorAll('span.p').forEach((el) => {
+        let split = el.textContent.trim().split(' @ ');
+        const isGithub= split.length === 2 && split[0] === 'Github';
+
+        if (isGithub) {
+          let img = document.createElement('img');
+          img.classList.add('lpgc-avatar');
+          img.src = `https://github.com/${split[1].trim()}.png?size=200`;
+          img.onload = function(){
+            el.replaceWith(img);
+          }
+        }
+      });
     </script>
 
   </body>
