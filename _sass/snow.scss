@@ -1,0 +1,51 @@
+.ag-snow {
+  //background: url(../images/bg.jpg) no-repeat scroll 50% 0;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+}
+.ag-snow:before {
+  content: "";
+  height: 100%;
+  width: 100%;
+
+  background-image: url(../images/snow.png), url(../images/snow2.png), url(../images/snow3.png);
+  background-repeat: repeat;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+
+  will-change: background-position;
+
+  -webkit-animation: an-snow 20s linear infinite;
+  -moz-animation: an-snow 20s linear infinite;
+  -o-animation: an-snow 20s linear infinite;
+  animation: an-snow 20s linear infinite;
+}
+
+@-webkit-keyframes an-snow {
+  100% {
+    background-position: 500px 1000px, 300px 300px, -400px 400px;
+  }
+}
+@-moz-keyframes an-snow {
+  100% {
+    background-position: 500px 1000px, 300px 300px, -400px 400px;
+  }
+}
+@-o-keyframes an-snow {
+  100% {
+    background-position: 500px 1000px, 300px 300px, -400px 400px;
+  }
+}
+@keyframes an-snow {
+  100% {
+    background-position: 500px 1000px, 300px 300px, -400px 400px;
+  }
+}
