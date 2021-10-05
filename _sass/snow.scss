@@ -10,6 +10,7 @@
   content: "";
   height: 100%;
   width: 100%;
+  pointer-events: none;
 
   background-image: url(../images/snow.png), url(../images/snow2.png), url(../images/snow3.png);
   background-repeat: repeat;
