@@ -56,7 +56,7 @@
         if (isPlayer) {
           let link = document.createElement('a');
           link.classList.add('lpgc-player');
-          link.href = `{{ site.github.repository_url }}/${split[1]}`;
+          link.href = `{{ site.github.repository_url }}/tree/main/${split[1]}`;
           link.textContent = el.textContent;
           el.replaceWith(link);
         }
