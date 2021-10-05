@@ -18,13 +18,13 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	padding: 0;
 	margin: 0;
+	padding: 0;
+	border: 0;
 	font: inherit;
 	font-size: 100%;
-	vertical-align: baseline;
-	border: 0;
   line-height: 19px;
+	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -52,13 +52,13 @@ table {
 
 /* LAYOUT STYLES */
 body {
+  padding: 24px;
+  background: #e7e7e7 url(../images/body-bg.png) 0 0 repeat;
+  color: #6d6d6d;
   font-family: 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 1em;
   line-height: 1.5;
-  color: #6d6d6d;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
-  background: #e7e7e7 url(../images/body-bg.png) 0 0 repeat;
-  padding: 24px;
 }
 
 a {
@@ -74,19 +74,19 @@ header {
 }
 
 header h1 {
+  color: #303030;
   font-family: 'Chivo', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 48px; font-weight: 900;
-  line-height: 1.2;
-  color: #303030;
   letter-spacing: -1px;
+  line-height: 1.2;
 }
 
 header h2 {
+  color: #aaa;
   font-size: 24px;
   font-weight: normal;
-  line-height: 1.3;
-  color: #aaa;
   letter-spacing: -1px;
+  line-height: 1.3;
 }
 
 #container {
@@ -96,8 +96,8 @@ header h2 {
 
 .inner {
   width: 100%;
-  margin: 0 auto;
   max-width: 1000px;
+  margin: 0 auto;
 }
 
 #container .inner img {
@@ -110,14 +110,17 @@ header h2 {
 
 a.button {
   display: block;
-  float: left;
   width: 179px;
-  padding: 12px 8px 12px 8px;
   margin-right: 14px;
-  font-size: 15px;
-  font-weight: bold;
-  line-height: 25px;
-  color: #303030;
+  padding: 12px 8px 12px 8px;
+  float: left;
+  border-top: solid 1px #cbcbcb;
+  border-right: solid 1px #b7b7b7;
+  border-bottom: solid 1px #b3b3b3;
+  border-left: solid 1px #b7b7b7;
+  border-radius: 30px;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
   background: #fdfdfd; /* Old browsers */
   background: -moz-linear-gradient(top,  #fdfdfd 0%, #f2f2f2 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fdfdfd), color-stop(100%,#f2f2f2)); /* Chrome,Safari4+ */
@@ -125,19 +128,20 @@ a.button {
   background: -o-linear-gradient(top,  #fdfdfd 0%,#f2f2f2 100%); /* Opera 11.10+ */
   background: -ms-linear-gradient(top,  #fdfdfd 0%,#f2f2f2 100%); /* IE10+ */
   background: linear-gradient(to top,  #fdfdfd 0%,#f2f2f2 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfdfd', endColorstr='#f2f2f2',GradientType=0 ); /* IE6-9 */
-  border-top: solid 1px #cbcbcb;
-  border-right: solid 1px #b7b7b7;
-  border-bottom: solid 1px #b3b3b3;
-  border-left: solid 1px #b7b7b7;
-  border-radius: 30px;
   -webkit-box-shadow: 10px 10px 5px #888;
   -moz-box-shadow: 10px 10px 5px #888;
   box-shadow: 0px 1px 5px #e8e8e8;
-  -moz-border-radius: 30px;
-  -webkit-border-radius: 30px;
+  color: #303030;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 25px;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfdfd', endColorstr='#f2f2f2',GradientType=0 ); /* IE6-9 */
 }
 a.button:hover {
+  border-top: solid 1px #b7b7b7;
+  border-right: solid 1px #b3b3b3;
+  border-bottom: solid 1px #b3b3b3;
+  border-left: solid 1px #b3b3b3;
   background: #fafafa; /* Old browsers */
   background: -moz-linear-gradient(top,  #fdfdfd 0%, #f6f6f6 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fdfdfd), color-stop(100%,#f6f6f6)); /* Chrome,Safari4+ */
@@ -146,10 +150,6 @@ a.button:hover {
   background: -ms-linear-gradient(top,  #fdfdfd 0%,#f6f6f6 100%); /* IE10+ */
   background: linear-gradient(to top,  #fdfdfd 0%,#f6f6f6, 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfdfd', endColorstr='#f6f6f6',GradientType=0 ); /* IE6-9 */
-  border-top: solid 1px #b7b7b7;
-  border-right: solid 1px #b3b3b3;
-  border-bottom: solid 1px #b3b3b3;
-  border-left: solid 1px #b3b3b3;
 }
 
 a.button span {
@@ -173,9 +173,9 @@ a.button span {
 
 code, pre {
   margin-bottom: 30px;
+  color: #222;
   font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
   font-size: 14px;
-  color: #222;
 }
 
 code {
@@ -207,11 +207,11 @@ ul, ol, dl {
 
 hr {
   height: 1px;
-  padding-bottom: 1em;
   margin-top: 1em;
-  line-height: 1px;
-  background: transparent url('../images/hr.png') 0 0 no-repeat;
+  padding-bottom: 1em;
   border: none;
+  background: transparent url('../images/hr.png') 0 0 no-repeat;
+  line-height: 1px;
 }
 
 strong {
@@ -232,9 +232,9 @@ th {
 }
 
 td {
+  border: 1px solid #ebebeb;
   font-weight: 300;
   text-align: center;
-  border: 1px solid #ebebeb;
 }
 
 form {
@@ -252,32 +252,32 @@ h1 {
 
 h2 {
   margin-bottom: 8px;
+  color: #303030;
   font-size: 22px;
   font-weight: bold;
-  color: #303030;
 }
 
 h3 {
   margin-bottom: 8px;
+  color: #d5000d;
   font-size: 18px;
   font-weight: bold;
-  color: #d5000d;
 }
 
 h4 {
+  color: #303030;
   font-size: 16px;
   font-weight: bold;
-  color: #303030;
 }
 
 h5 {
-  font-size: 1em;
   color: #303030;
+  font-size: 1em;
 }
 
 h6 {
-  font-size: .8em;
   color: #303030;
+  font-size: .8em;
 }
 
 p {
@@ -294,22 +294,22 @@ p a {
 }
 
 blockquote {
-  padding: 0 0 0 30px;
   margin-bottom: 20px;
-  font-size: 1.6em;
+  padding: 0 0 0 30px;
   border-left: 10px solid #e9e9e9;
+  font-size: 1.6em;
 }
 
 ul li {
-  list-style-position: inside;
-  list-style: disc;
   padding-left: 20px;
+  list-style: disc;
+  list-style-position: inside;
 }
 
 ol li {
-  list-style-position: inside;
-  list-style: decimal;
   padding-left: 3px;
+  list-style: decimal;
+  list-style-position: inside;
 }
 
 dl dt {
@@ -317,12 +317,12 @@ dl dt {
 }
 
 footer {
+  margin-top: 40px;
   padding-top: 20px;
   padding-bottom: 30px;
-  margin-top: 40px;
-  font-size: 13px;
-  color: #aaa;
   background: transparent url('../images/hr.png') 0 0 no-repeat;
+  color: #aaa;
+  font-size: 13px;
 }
 
 footer a {
@@ -334,11 +334,11 @@ footer a:hover {
 
 /* MISC */
 .clearfix:after {
+  content: '.';
   display: block;
+  visibility: hidden;
   height: 0;
   clear: both;
-  visibility: hidden;
-  content: '.';
 }
 
 .clearfix {display: inline-block;}
@@ -389,10 +389,20 @@ footer a:hover {
   position: absolute;
   width: 1px;
   height: 1px;
-  padding: 0;
   margin: -1px;
+  padding: 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
-  white-space: nowrap; /* added line */
   border: 0;
+  white-space: nowrap; /* added line */
+}
+
+.lpgc-player {
+  display: block;
+  max-width: 300px;
+  margin-bottom: 15px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: forestgreen;
+  color: white !important;
 }
