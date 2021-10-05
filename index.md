@@ -98,6 +98,7 @@ layout: default
 
 
 ! Keeper
+Github @ Bogstandard
 # Awaiting the frost
    Day One ⟶ Keeper/scorekeeper.test scores [58]     ⁽ᵃᵛᵍ ⁵⁸⁾
 -  Day Two ⟶ Keeper/example-day/example-file.test scores [58]     ⁽ᵃᵛᵍ ⁵⁸⁾
@@ -121,40 +122,41 @@ layout: default
 ! ./lapland-golf-course/Gemfile.lock scores [1306] ⁽¹³⁰⁶⁾
 ! ./lapland-golf-course/_includes/head-custom-google-analytics.html scores [442] ⁽¹⁷⁴⁸⁾
 ! ./lapland-golf-course/_includes/head-custom.html scores [337] ⁽²⁰⁸⁵⁾
-! ./lapland-golf-course/_layouts/default.html scores [1808] ⁽³⁸⁹³⁾
-! ./lapland-golf-course/_sass/jekyll-theme-tactile.scss scores [7239] ⁽¹¹¹³²⁾
-! ./lapland-golf-course/_sass/rouge-github.scss scores [3229] ⁽¹⁴³⁶¹⁾
-! ./lapland-golf-course/_sass/snow.scss scores [1055] ⁽¹⁵⁴¹⁶⁾
-! ./lapland-golf-course/_sass/tactile.scss scores [31] ⁽¹⁵⁴⁴⁷⁾
-! ./lapland-golf-course/_site/assets/css/print.css scores [2832] ⁽¹⁸²⁷⁹⁾
-! ./lapland-golf-course/_site/assets/css/style.css scores [10710] ⁽²⁸⁹⁸⁹⁾
-! ./lapland-golf-course/_site/assets/css/style.css.map scores [25481] ⁽⁵⁴⁴⁷⁰⁾
-! ./lapland-golf-course/_site/assets/images/body-bg.png scores [2263] ⁽⁵⁶⁷³³⁾
-! ./lapland-golf-course/_site/assets/images/highlight-bg.jpg scores [27162] ⁽⁸³⁸⁹⁵⁾
-! ./lapland-golf-course/_site/assets/images/hr.png scores [105] ⁽⁸⁴⁰⁰⁰⁾
-! ./lapland-golf-course/_site/assets/images/octocat-icon.png scores [435] ⁽⁸⁴⁴³⁵⁾
-! ./lapland-golf-course/_site/assets/images/snow.png scores [605] ⁽⁸⁵⁰⁴⁰⁾
-! ./lapland-golf-course/_site/assets/images/snow2.png scores [956] ⁽⁸⁵⁹⁹⁶⁾
-! ./lapland-golf-course/_site/assets/images/snow3.png scores [1439] ⁽⁸⁷⁴³⁵⁾
-! ./lapland-golf-course/_site/assets/images/tar-gz-icon.png scores [679] ⁽⁸⁸¹¹⁴⁾
-! ./lapland-golf-course/_site/assets/images/zip-icon.png scores [682] ⁽⁸⁸⁷⁹⁶⁾
-! ./lapland-golf-course/_site/index.html scores [6033] ⁽⁹⁴⁸²⁹⁾
-! ./lapland-golf-course/_site/lapland-golf-course.gemspec scores [539] ⁽⁹⁵³⁶⁸⁾
-! ./lapland-golf-course/assets/css/print.css scores [2832] ⁽⁹⁸²⁰⁰⁾
-! ./lapland-golf-course/assets/css/style.scss scores [37] ⁽⁹⁸²³⁷⁾
-! ./lapland-golf-course/assets/images/body-bg.png scores [2263] ⁽¹⁰⁰⁵⁰⁰⁾
-! ./lapland-golf-course/assets/images/highlight-bg.jpg scores [27162] ⁽¹²⁷⁶⁶²⁾
-! ./lapland-golf-course/assets/images/hr.png scores [105] ⁽¹²⁷⁷⁶⁷⁾
-! ./lapland-golf-course/assets/images/octocat-icon.png scores [435] ⁽¹²⁸²⁰²⁾
-! ./lapland-golf-course/assets/images/snow.png scores [605] ⁽¹²⁸⁸⁰⁷⁾
-! ./lapland-golf-course/assets/images/snow2.png scores [956] ⁽¹²⁹⁷⁶³⁾
-! ./lapland-golf-course/assets/images/snow3.png scores [1439] ⁽¹³¹²⁰²⁾
-! ./lapland-golf-course/assets/images/tar-gz-icon.png scores [679] ⁽¹³¹⁸⁸¹⁾
-! ./lapland-golf-course/assets/images/zip-icon.png scores [682] ⁽¹³²⁵⁶³⁾
-! ./lapland-golf-course/lapland-golf-course.gemspec scores [539] ⁽¹³³¹⁰²⁾
+! ./lapland-golf-course/_layouts/default.html scores [2212] ⁽⁴²⁹⁷⁾
+! ./lapland-golf-course/_sass/jekyll-theme-tactile.scss scores [7336] ⁽¹¹⁶³³⁾
+! ./lapland-golf-course/_sass/rouge-github.scss scores [3229] ⁽¹⁴⁸⁶²⁾
+! ./lapland-golf-course/_sass/snow.scss scores [1076] ⁽¹⁵⁹³⁸⁾
+! ./lapland-golf-course/_sass/tactile.scss scores [31] ⁽¹⁵⁹⁶⁹⁾
+! ./lapland-golf-course/_site/assets/css/print.css scores [2832] ⁽¹⁸⁸⁰¹⁾
+! ./lapland-golf-course/_site/assets/css/style.css scores [10835] ⁽²⁹⁶³⁶⁾
+! ./lapland-golf-course/_site/assets/css/style.css.map scores [25775] ⁽⁵⁵⁴¹¹⁾
+! ./lapland-golf-course/_site/assets/images/body-bg.png scores [2263] ⁽⁵⁷⁶⁷⁴⁾
+! ./lapland-golf-course/_site/assets/images/highlight-bg.jpg scores [27162] ⁽⁸⁴⁸³⁶⁾
+! ./lapland-golf-course/_site/assets/images/hr.png scores [105] ⁽⁸⁴⁹⁴¹⁾
+! ./lapland-golf-course/_site/assets/images/octocat-icon.png scores [435] ⁽⁸⁵³⁷⁶⁾
+! ./lapland-golf-course/_site/assets/images/snow.png scores [605] ⁽⁸⁵⁹⁸¹⁾
+! ./lapland-golf-course/_site/assets/images/snow2.png scores [956] ⁽⁸⁶⁹³⁷⁾
+! ./lapland-golf-course/_site/assets/images/snow3.png scores [1439] ⁽⁸⁸³⁷⁶⁾
+! ./lapland-golf-course/_site/assets/images/tar-gz-icon.png scores [679] ⁽⁸⁹⁰⁵⁵⁾
+! ./lapland-golf-course/_site/assets/images/zip-icon.png scores [682] ⁽⁸⁹⁷³⁷⁾
+! ./lapland-golf-course/_site/index.html scores [9014] ⁽⁹⁸⁷⁵¹⁾
+! ./lapland-golf-course/_site/lapland-golf-course.gemspec scores [539] ⁽⁹⁹²⁹⁰⁾
+! ./lapland-golf-course/assets/css/print.css scores [2832] ⁽¹⁰²¹²²⁾
+! ./lapland-golf-course/assets/css/style.scss scores [37] ⁽¹⁰²¹⁵⁹⁾
+! ./lapland-golf-course/assets/images/body-bg.png scores [2263] ⁽¹⁰⁴⁴²²⁾
+! ./lapland-golf-course/assets/images/highlight-bg.jpg scores [27162] ⁽¹³¹⁵⁸⁴⁾
+! ./lapland-golf-course/assets/images/hr.png scores [105] ⁽¹³¹⁶⁸⁹⁾
+! ./lapland-golf-course/assets/images/octocat-icon.png scores [435] ⁽¹³²¹²⁴⁾
+! ./lapland-golf-course/assets/images/snow.png scores [605] ⁽¹³²⁷²⁹⁾
+! ./lapland-golf-course/assets/images/snow2.png scores [956] ⁽¹³³⁶⁸⁵⁾
+! ./lapland-golf-course/assets/images/snow3.png scores [1439] ⁽¹³⁵¹²⁴⁾
+! ./lapland-golf-course/assets/images/tar-gz-icon.png scores [679] ⁽¹³⁵⁸⁰³⁾
+! ./lapland-golf-course/assets/images/zip-icon.png scores [682] ⁽¹³⁶⁴⁸⁵⁾
+! ./lapland-golf-course/lapland-golf-course.gemspec scores [539] ⁽¹³⁷⁰²⁴⁾
 + note: this ignores txt, md and extensionless files!
 
 
 
-Updated 05/10/2021 22:32:52 Local time
+Updated 05/10/2021 23:55:28 Local time
 ```
+
