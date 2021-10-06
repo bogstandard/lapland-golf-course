@@ -17,6 +17,8 @@
   @include proportionate-height(($height / $width) * 100%);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 @import "rouge-github";
 @import "snow";
 @import "golf";
@@ -75,25 +77,25 @@ body {
   position: relative;
   padding: 10px;
   background: #e7e7e7 url(../images/body-bg.png) 0 0 repeat;
+  background-image: linear-gradient(0deg, #e7e7e7, rgba(210, 224, 229, .3));
   color: #6d6d6d;
   font-family: 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: 1em;
   line-height: 1.5;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
-  background-image: linear-gradient(0deg, #e7e7e7, rgba(210, 224, 229, .3));
 
   &::after {
     content: '';
     position: absolute;
+    z-index: -1;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 100%;
     opacity: 0.1;
     background-image: url('../images/forest.svg');
-    background-size: cover;
     background-position: top center;
-    z-index: -1;
+    background-size: cover;
     pointer-events: none;
   }
 }
@@ -235,6 +237,7 @@ code, pre {
   color: #222;
   font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
   font-size: 14px;
+  text-align: left;
 }
 
 code {
@@ -249,6 +252,18 @@ pre {
   //color: #f2f2f2;
   //text-shadow: none;
   //background: #303030;
+
+  .swal2-container & {
+    padding: 10px;
+    border-radius: 5px;
+    background: #303030;
+    color: #f2f2f2;
+    text-shadow: none;
+
+    code {
+      color: #f2f2f2;
+    }
+  }
 }
 pre code {
   padding: 0;
@@ -523,8 +538,8 @@ footer a:hover {
   @include ratio-height(1, 1);
 
   &::before {
-    position: relative;
     content: '';
+    position: relative;
     z-index: -1;
     top: 10%;
     left: 20%;
@@ -532,4 +547,8 @@ footer a:hover {
     border-radius: 50%;
     background-image: linear-gradient(33deg, #fff, rgba(255, 255, 255, .88));
   }
+}
+
+.swal2-title {
+  font-family: 'Permanent Marker', sans-serif;
 }

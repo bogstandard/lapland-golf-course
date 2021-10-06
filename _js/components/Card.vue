@@ -5,7 +5,7 @@
 
       <img v-if="username.length" :src="`https://github.com/${username}.png?size=100`" alt="">
 
-      <div class="card__row">
+      <div class="card__row" @click="showTarget">
         <div class="card__cell">
           {{ name }}
 
@@ -21,7 +21,7 @@
         <div class="card__heading">Avg.</div>
       </div>
 
-      <div class="card__row" v-bind:class="{'card__row--worse': hole.worse}" v-for="(hole, i) in holes" :key="i">
+      <div class="card__row" v-bind:class="{'card__row--worse': hole.worse}" v-for="(hole, i) in holes" :key="i" @click="showSolution(hole)">
         <div class="card__cell">{{ hole.label }}</div>
         <div class="card__cell">{{ hole.score }}</div>
         <div class="card__cell">{{ hole.runningTotal }}</div>
@@ -60,6 +60,25 @@
           total: 0,
           average: 0,
           tilt: 0,
+        }
+      },
+      methods: {
+        showTarget: function() {
+          window.location.href = this.target;
+        },
+        showSolution: function(hole) {
+          this.$swal({
+            title: hole.label,
+            html:
+              `<pre><code>${hole.original}</code></pre>`,
+            showCloseButton: true,
+            focusCloseButton: false,
+            showCancelButton: false,
+            showConfirmButton: false,
+            focusConfirm: false,
+            width: 600,
+            backdrop: 'rgba(0,0,0,0.2)'
+          });
         }
       },
       async mounted() {
