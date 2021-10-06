@@ -47,7 +47,7 @@
     </div>
 
     <script>window.players = {{ page.players | default: site.players | jsonify }};</script>
-    <script src="/assets/js/app.js"></script>
+    <script src="{{ '/assets/js/app.js?v=' | append: site.github.build_revision | relative_url }}"></script>
 
   </body>
 </html>
