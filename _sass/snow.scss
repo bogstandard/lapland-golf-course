@@ -1,33 +1,33 @@
 .ag-snow {
+  position: relative;
   //background: url(../images/bg.jpg) no-repeat scroll 50% 0;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  position: relative;
 }
 .ag-snow:before {
   content: "";
-  height: 100%;
-  width: 100%;
-  pointer-events: none;
 
-  background-image: url(../images/snow.png), url(../images/snow2.png), url(../images/snow3.png);
-  background-repeat: repeat;
-
-  position: absolute;
-  left: 0;
+  position: fixed;
   top: 0;
-
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-
-  will-change: background-position;
+  left: 0;
+  width: 100%;
+  height: 100%;
 
   -webkit-animation: an-snow 20s linear infinite;
   -moz-animation: an-snow 20s linear infinite;
   -o-animation: an-snow 20s linear infinite;
   animation: an-snow 20s linear infinite;
+
+  background-image: url(../images/snow.png), url(../images/snow2.png), url(../images/snow3.png);
+  background-repeat: repeat;
+  pointer-events: none;
+
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+
+  will-change: background-position;
 }
 
 @-webkit-keyframes an-snow {
