@@ -1,3 +1,22 @@
+@mixin proportionate-height($height: 100%) {
+  &::before {
+    content: '';
+    display: block;
+    padding-top: $height;
+    float: left;
+  }
+
+  &::after {
+      content: '';
+      display: table;
+      clear: both;
+  }
+}
+
+@mixin ratio-height($width, $height) {
+  @include proportionate-height(($height / $width) * 100%);
+}
+
 @import "rouge-github";
 @import "snow";
 @import "golf";
@@ -53,6 +72,7 @@ table {
 
 /* LAYOUT STYLES */
 body {
+  position: relative;
   padding: 10px;
   background: #e7e7e7 url(../images/body-bg.png) 0 0 repeat;
   color: #6d6d6d;
@@ -60,6 +80,22 @@ body {
   font-size: 1em;
   line-height: 1.5;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  background-image: linear-gradient(0deg, #e7e7e7, rgba(210, 224, 229, .3));
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    background-image: url('../images/forest.svg');
+    background-size: cover;
+    background-position: top center;
+    z-index: -1;
+    pointer-events: none;
+  }
 }
 
 a {
@@ -448,7 +484,7 @@ footer a:hover {
   z-index: 1;
   color: darkred;
   font-family: 'XmasSweaterStitch';
-  font-size: clamp(2rem, 10vw, 10rem);
+  font-size: clamp(2.5rem, 10vw, 5rem);
   font-weight: normal;
   text-align: center;
 
@@ -479,22 +515,21 @@ footer a:hover {
   left: -5%;
   width: 60%;
   max-width: 400px;
-  margin: 0 auto 40px;
+  margin: 40px auto;
   background-image: url('../images/logo.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  aspect-ratio: 1;
+  @include ratio-height(1, 1);
 
   &::before {
+    position: relative;
     content: '';
-    position: absolute;
     z-index: -1;
     top: 10%;
     left: 20%;
-    width: 90%;
-    height: 90%;
+    width: 100%;
     border-radius: 50%;
-    background: white;
+    background-image: linear-gradient(33deg, #fff, rgba(255, 255, 255, .88));
   }
 }
