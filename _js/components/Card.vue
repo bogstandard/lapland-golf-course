@@ -1,10 +1,17 @@
 <template>
     <div class="card" :style="`transform: rotate(${tilt}deg);`">
+      <div class="loading-bar" :class="{'visible': isLoading}" :style="`width: ${(100 * holes.length) / incoming}%;`"></div>
+
 
       <img v-if="username.length" :src="`https://github.com/${username}.png?size=100`" alt="">
 
       <div class="card__row">
-        <div class="card__cell">{{ name }}</div>
+        <div class="card__cell">
+          {{ name }}
+
+          <span class="loading-text" v-if="isLoading">loaded .. {{ holes.length }} / {{ incoming }}</span>
+
+        </div>
       </div>
 
       <div class="card__row">
@@ -46,6 +53,7 @@
       },
       data() {
         return {
+          incoming: 0,
           holes: [
 
           ],
@@ -75,6 +83,8 @@
                           path
                         }
                       });
+
+            this.incoming = holes.length;
 
             // Foreach Hole found in Scorecard
             // Tally up!
@@ -106,6 +116,9 @@
         },
         dir: function() {
           return this.path.substr(0, this.path.lastIndexOf('/')) + '/';
+        },
+        isLoading: function() {
+          return this.holes.length < this.incoming;
         }
       },
   };

@@ -62,3 +62,24 @@
   font-style: italic;
   font-weight: bold;
 }
+
+.loading-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  transition: width .33s, opacity 5s;
+  opacity: 0;
+  background: black;
+
+  &.visible {
+    transition: width .33s, opacity .1s;
+    opacity: 1;
+  }
+}
+
+.loading-text {
+  margin-left: 10px;
+  opacity: 0.5;
+  font-size: .5;
+}
