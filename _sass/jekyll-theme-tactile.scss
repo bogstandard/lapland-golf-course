@@ -1,5 +1,6 @@
 @import "rouge-github";
 @import "snow";
+@import "golf";
 
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -96,7 +97,6 @@ header h2 {
 
 .inner {
   width: 100%;
-  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -408,8 +408,8 @@ footer a:hover {
 }
 
 .lpgc-avatar {
-  transform: translateX(-125%) translateY(-45%);
   position: absolute;
+  transform: translateX(-125%) translateY(-45%);
   border-radius: 50%;
   box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.33);
 }

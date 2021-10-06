@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+.golf {
+  //..
+}
+
+.card {
+  max-width: 600px;
+  margin: 50px 25px;
+  padding: 50px 24px;
+  border-radius: 4px;
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,1), rgba(241,241,232,1)), url("data:image/svg+xml,%3Csvg viewBox='0 0 348 348' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.69' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-color: rgba(34, 139, 34, 0.1);
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+  font-family: 'Permanent Marker', cursive;
+  text-shadow: none;
+}
+
+.card__row {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  gap: 10px;
+}
+
+.card__cell,
+.card__heading {
+
+  &:first-child {
+    justify-content: flex-start;
+    min-width: 150px;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 12px;
+  border: 4px solid rgba(34, 139, 34, 0.9);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 0.77);
+  font-size: 18px;
+
+  .card__row--worse & {
+    background: rgba(255, 165, 165, 0.6);
+  }
+}
+
+.card__heading {
+  border: 0;
+  background: none;
+  color: rgba(0, 0, 0, 0.2);
+  font-family: 'Helvetica Neue', Helvetica, Arial, serif;
+  font-style: italic;
+  font-weight: bold;
+}

@@ -1,0 +1,28 @@
+{
+  "name": "lapland-golf-course",
+  "version": "1.0.0",
+  "description": "Welcome to your new Jekyll theme! In this directory, you'll find the files you need to be able to package up your theme into a gem. Put your layouts in `_layouts`, your includes in `_includes`, your sass files in `_sass` and any other assets in `assets`.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bogstandard/lapland-golf-course.git"
+  },
+  "author": "Bogstandard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bogstandard/lapland-golf-course/issues"
+  },
+  "homepage": "https://github.com/bogstandard/lapland-golf-course#readme",
+  "devDependencies": {
+    "laravel-mix": "^6.0.31",
+    "vue-loader": "^15.9.8",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "dependencies": {
+    "vue": "^2.6.14",
+    "vue-masonry-wall": "^0.3.2"
+  }
+}
