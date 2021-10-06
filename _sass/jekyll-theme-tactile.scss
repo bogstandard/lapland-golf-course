@@ -53,7 +53,7 @@ table {
 
 /* LAYOUT STYLES */
 body {
-  padding: 24px;
+  padding: 10px;
   background: #e7e7e7 url(../images/body-bg.png) 0 0 repeat;
   color: #6d6d6d;
   font-family: 'Helvetica Neue', Helvetica, Arial, serif;
@@ -95,10 +95,31 @@ header h2 {
   //background: transparent url(../images/highlight-bg.jpg) 50% 0 no-repeat;
 }
 
+
+
 .inner {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1800px;
   margin: 0 auto;
+}
+
+#main_content {
+  @media (min-width: 800px) {
+    display: flex;
+  }
+}
+
+.user-content {
+  opacity: .8;
+
+  @media (min-width: 800px) {
+    max-width: 350px;
+    margin: 20px 60px 20px 20px;
+  }
+}
+
+.golf-content {
+  width: 100%;
 }
 
 #container .inner img {
@@ -211,7 +232,7 @@ hr {
   margin-top: 1em;
   padding-bottom: 1em;
   border: none;
-  background: transparent url('../images/hr.png') 0 0 no-repeat;
+  background: transparent url('../images/hr.png') 50% 0 no-repeat;
   line-height: 1px;
 }
 
@@ -260,7 +281,7 @@ h2 {
 
 h3 {
   margin-bottom: 8px;
-  color: #d5000d;
+  color: #303030;
   font-size: 18px;
   font-weight: bold;
 }
@@ -413,4 +434,66 @@ footer a:hover {
   transform: translateX(-125%) translateY(-45%);
   border-radius: 50%;
   box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.33);
+}
+
+@font-face {
+    font-family: 'XmasSweaterStitch';
+    src: url('./XmasSweaterStitch-xXYq.ttf');
+}
+
+.big-title {
+  display: block;
+  position: relative;
+  z-index: 1;
+  color: darkred;
+  font-family: 'XmasSweaterStitch';
+  font-size: clamp(2rem, 10vw, 10rem);
+  font-weight: normal;
+  text-align: center;
+
+  &::before,
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &::before {
+    color: darkblue;
+    clip-path: inset(40% 0 0 0);
+  }
+
+  &::after {
+    color: darkgreen;
+    clip-path: inset(66% 0 0 0);
+  }
+}
+
+.logo {
+  position: relative;
+  left: -5%;
+  width: 60%;
+  max-width: 400px;
+  margin: 0 auto 40px;
+  background-image: url('../images/logo.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  aspect-ratio: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 10%;
+    left: 20%;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: white;
+  }
 }

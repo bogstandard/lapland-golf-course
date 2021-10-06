@@ -247,7 +247,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      targetScorecards: [{
+      players: [{
         username: '',
         name: 'Grounds Keeper',
         index: 0,
@@ -18511,10 +18511,7 @@ var render = function() {
     { staticClass: "golf" },
     [
       _c("vue-masonry-wall", {
-        attrs: {
-          items: _vm.targetScorecards,
-          options: { width: 500, padding: 0 }
-        },
+        attrs: { items: _vm.players, options: { width: 500, padding: 0 } },
         scopedSlots: _vm._u([
           {
             key: "default",
