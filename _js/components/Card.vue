@@ -1,6 +1,8 @@
 <template>
     <div class="card" :style="`transform: rotate(${tilt}deg);`">
 
+      <img v-if="username.length" :src="`https://github.com/${username}.png?size=100`" alt="">
+
       <div class="card__row">
         <div class="card__cell">{{ name }}</div>
       </div>
@@ -25,6 +27,10 @@
 <script>
   export default {
       props: {
+        username: {
+          type: String,
+          default: ""
+        },
         name: {
           type: String,
           default: ""

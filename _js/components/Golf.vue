@@ -1,10 +1,10 @@
 <template>
     <div class="golf">
 
-      <vue-masonry-wall :items="targetScorecards" :options="{width: 700, padding: 0}">
+      <vue-masonry-wall :items="targetScorecards" :options="{width: 500, padding: 0}">
         <template v-slot:default="{item}">
           <div class="item">
-            <Card :name="item.name" :target="item.url" :index="item.index" />
+            <Card :username="item.username" :name="item.name" :target="item.url" :index="item.index" />
           </div>
         </template>
       </vue-masonry-wall>
@@ -21,11 +21,11 @@
     data() {
       return {
         targetScorecards: [
-          {name: 'Grounds Keeper', index: 0, url: 'https://github.com/bogstandard/lapland-golf-club/blob/main/Keeper/.scorecard'},
-          {name: 'Ben', index: 1, url: 'https://github.com/Gerome/AdventOfCode2020/blob/main/Ben/.scorecard'},
-          {name: 'Gerome', index: 2, url: 'https://github.com/Gerome/AdventOfCode2020/blob/main/Gerome/.scorecard'},
-          {name: 'Joe', index: 3, url: 'https://github.com/Gerome/AdventOfCode2020/blob/main/Joe/.scorecard'},
-          {name: 'Eric', index: 4, url: 'https://github.com/Gerome/AdventOfCode2020/blob/main/Eric/.scorecard'}
+          {username: '', name: 'Grounds Keeper', index: 0, url: 'https://github.com/bogstandard/lapland-golf-club/blob/main/Keeper/.scorecard'},
+          {username: '', name: 'Ben', index: 1, url: 'https://github.com/Gerome/AdventOfCode2020/blob/main/Ben/.scorecard'},
+          {username: 'gerome', name: 'Gerome', index: 2, url: 'https://github.com/Gerome/AdventOfCode2020/blob/main/Gerome/.scorecard'},
+          {username: '', name: 'Joe', index: 3, url: 'https://github.com/Gerome/AdventOfCode2020/blob/main/Joe/.scorecard'},
+          {username: 'bogstandard', name: 'Eric', index: 4, url: 'https://github.com/Gerome/AdventOfCode2020/blob/main/Eric/.scorecard'}
         ]
       }
     },

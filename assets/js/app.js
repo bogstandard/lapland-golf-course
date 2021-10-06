@@ -61,8 +61,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
+    username: {
+      type: String,
+      "default": ""
+    },
     name: {
       type: String,
       "default": ""
@@ -242,22 +248,27 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       targetScorecards: [{
+        username: '',
         name: 'Grounds Keeper',
         index: 0,
         url: 'https://github.com/bogstandard/lapland-golf-club/blob/main/Keeper/.scorecard'
       }, {
+        username: '',
         name: 'Ben',
         index: 1,
         url: 'https://github.com/Gerome/AdventOfCode2020/blob/main/Ben/.scorecard'
       }, {
+        username: 'gerome',
         name: 'Gerome',
         index: 2,
         url: 'https://github.com/Gerome/AdventOfCode2020/blob/main/Gerome/.scorecard'
       }, {
+        username: '',
         name: 'Joe',
         index: 3,
         url: 'https://github.com/Gerome/AdventOfCode2020/blob/main/Joe/.scorecard'
       }, {
+        username: 'bogstandard',
         name: 'Eric',
         index: 4,
         url: 'https://github.com/Gerome/AdventOfCode2020/blob/main/Eric/.scorecard'
@@ -18411,6 +18422,15 @@ var render = function() {
     "div",
     { staticClass: "card", style: "transform: rotate(" + _vm.tilt + "deg);" },
     [
+      _vm.username.length
+        ? _c("img", {
+            attrs: {
+              src: "https://github.com/" + _vm.username + ".png?size=100",
+              alt: ""
+            }
+          })
+        : _vm._e(),
+      _vm._v(" "),
       _c("div", { staticClass: "card__row" }, [
         _c("div", { staticClass: "card__cell" }, [_vm._v(_vm._s(_vm.name))])
       ]),
@@ -18493,7 +18513,7 @@ var render = function() {
       _c("vue-masonry-wall", {
         attrs: {
           items: _vm.targetScorecards,
-          options: { width: 700, padding: 0 }
+          options: { width: 500, padding: 0 }
         },
         scopedSlots: _vm._u([
           {
@@ -18507,6 +18527,7 @@ var render = function() {
                   [
                     _c("Card", {
                       attrs: {
+                        username: item.username,
                         name: item.name,
                         target: item.url,
                         index: item.index
