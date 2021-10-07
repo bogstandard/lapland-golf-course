@@ -2,6 +2,10 @@
     <div class="card" :style="`transform: rotate(${tilt}deg);`">
       <div class="loading-bar" :class="{'visible': isLoading}" :style="`width: ${(100 * holes.length) / incoming}%;`"></div>
 
+      <div class="card__langs">
+        <span class="card__lang" v-for="(value, lang) in langs" :key="lang">{{ lang }}</span>
+      </div>
+
 
       <img v-if="username.length" :src="`https://github.com/${username}.png?size=100`" alt="">
 
@@ -32,6 +36,8 @@
 </template>
 
 <script>
+  import languages from '../langs.json';
+
   export default {
       props: {
         username: {
@@ -60,6 +66,7 @@
           total: 0,
           average: 0,
           tilt: 0,
+          langs: {}
         }
       },
       methods: {
@@ -84,6 +91,15 @@
             width: 600,
             backdrop: 'rgba(0,0,0,0.2)'
           });
+        },
+        getLang(path) {
+          const matches = languages.filter(lang => {
+            lang.extensions = lang.extensions || [];
+            return lang.extensions.filter(ext => {
+              return path.endsWith(ext);
+            }).length > 0;
+          });
+          return matches.length > 0 ? matches[0].name : 'Unknown';
         }
       },
       async mounted() {
@@ -113,6 +129,8 @@
             // Foreach Hole found in Scorecard
             // Tally up!
             for (let h of holes) {
+              let lang = this.getLang(h.path);
+              this.langs[lang] = ++this.langs[lang] || 1;
               let hres = await fetch(`https://raw.githubusercontent.com/${this.dir}${h.path}`);
               hres = await hres.text();
               const cured = hres.split('\n')

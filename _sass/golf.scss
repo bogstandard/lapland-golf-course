@@ -82,3 +82,15 @@
   opacity: 0.5;
   font-size: .5;
 }
+
+.card__lang {
+  display: inline-block;
+  margin: 5px 5px 5px 0;
+  opacity: .5;
+
+  &:not(:first-child) {
+    &::before {
+      content: '+ '
+    }
+  }
+}
