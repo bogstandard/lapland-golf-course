@@ -1,41 +1,32 @@
-# lapland-golf-course
+<img src="https://bogstandard.github.io/lapland-golf-club/assets/images/logo.svg" width="300" height="300" align="right">
 
-Welcome to your new Jekyll theme! In this directory, you'll find the files you need to be able to package up your theme into a gem. Put your layouts in `_layouts`, your includes in `_includes`, your sass files in `_sass` and any other assets in `assets`.
+# Lapland Golf Course
 
-To experiment with this code, add some sample content and run `bundle exec jekyll serve` – this directory is setup just like a Jekyll site!
+The course that hosts the prestigious [Lapland Golf Club](https://bogstandard.github.io/lapland-golf-club/)!
 
-TODO: Delete this and the text above, and describe your gem
+This custom Jekyll theme gets pulled in via Github Pages & operates as an automated clubhouse for code golfing seasons. This was built with golfing Advent of Code as the focus but can be used for other seasons, other theme variants are coming soon.
 
+## Establishing a Club
 
-## Installation
+Fork or Clone the [Lapland Golf Club repository](https://github.com/bogstandard/lapland-golf-club), remove any directories you don't need, then edit `index.md`, `README.md` and **most importantly** `_config.yml` to your liking and to match your desired players. This config can be updated at any time, so don't stress it too much. 
 
-Add this line to your Jekyll site's `Gemfile`:
+Then activate Github Pages for the repository with Jekyll toggled. Your edited `_config.yml` will provide the body copy & player information.
 
-```ruby
-gem "lapland-golf-course"
-```
+The [Lapland Golf Club repository](https://github.com/bogstandard/lapland-golf-club) will always be the most up-to-date instance of the Jekyll theme and so is your best source of reference if you're confused.
 
-And add this line to your Jekyll site's `_config.yml`:
+### What is a `.scorecard`?
 
-```yaml
-theme: lapland-golf-course
-```
+A `.scorecard` is a special file that sits in the base directory of where a player is commiting their solutions for each hole of the season. The URL of this `scorecard` is provided to the club `_config.yml`, which then allows the players solutions to be scored.
 
-And then execute:
+The player must fill out their `.scorecard` when they've completed a solution, this part is not automated to avoid non-solutions being counted.
 
-    $ bundle
+### How are scores counted?
 
-Or install it yourself as:
-
-    $ gem install lapland-golf-course
-
-## Usage
-
-TODO: Write usage instructions here. Describe your available layouts, includes, sass and/or assets.
+Leading & trailing whitespace is trimmed from each line of a solution, the characters are counted. Lines beginnning with `#` or `//` are not counted. It's recommended players **do not** leave comments at the ends of lines as these will be counted.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/hello. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome. This project is intended to be a safe, welcoming space for collaboration, however contributors are not currently expected to adhere to a code of conduct. Just imagine you're in a very comfortable clubhouse and conduct yourself accordingly.
 
 ## Development
 
@@ -43,8 +34,7 @@ To set up your environment to develop this theme, run `bundle install`.
 
 Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
 
-When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
-To add a custom directory to your theme-gem, please edit the regexp in `lapland-golf-course.gemspec` accordingly.
+We are also using Laravel Mix for the Javascript compiling, ensure you run `npm mix watch` at the same time as above.
 
 ## License
 
