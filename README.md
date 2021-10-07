@@ -1,6 +1,6 @@
 <img src="https://bogstandard.github.io/lapland-golf-club/assets/images/logo.svg" width="180" height="180" align="right">
 
-# Lapland Golf Course
+# 🌲 Lapland Golf Course
 
 The course that hosts the prestigious [Lapland Golf Club](https://bogstandard.github.io/lapland-golf-club/)!
 
