@@ -8,7 +8,7 @@
   margin: 50px 15px;
   padding: 20px;
   background-color: white;
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'Architects Daughter', cursive;
   text-shadow: none;
 
   img {
@@ -81,4 +81,16 @@
   margin-left: 10px;
   opacity: 0.5;
   font-size: .5;
+}
+
+.card__lang {
+  display: inline-block;
+  margin: 5px 5px 5px 0;
+  opacity: .5;
+
+  &:not(:first-child) {
+    &::before {
+      content: '+ '
+    }
+  }
 }

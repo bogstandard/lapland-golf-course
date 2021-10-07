@@ -17,7 +17,7 @@
   @include proportionate-height(($height / $width) * 100%);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 
 @import "rouge-github";
 @import "snow";
@@ -554,5 +554,5 @@ footer a:hover {
 }
 
 .swal2-title {
-  font-family: 'Permanent Marker', sans-serif;
+  font-family: 'Architects Daughter', sans-serif;
 }
