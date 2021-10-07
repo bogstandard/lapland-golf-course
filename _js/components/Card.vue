@@ -67,10 +67,15 @@
           window.location.href = this.target;
         },
         showSolution: function(hole) {
+          const santizedText = hole.original.replace(/&/g, '&amp;')
+                                            .replace(/</g, '&lt;')
+                                            .replace(/>/g, '&gt;')
+                                            .replace(/"/g, '&quot;');
+
           this.$swal({
             title: hole.label,
             html:
-              `<pre><code>${hole.original}</code></pre>`,
+              `<pre><code>${santizedText}</code></pre>`,
             showCloseButton: true,
             focusCloseButton: false,
             showCancelButton: false,
