@@ -92,6 +92,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+    max-height: 100vh;
     opacity: 0.1;
     background-image: url('../images/forest.svg');
     background-position: top center;
@@ -441,7 +442,6 @@ footer a:hover {
     display: none;
   }
   .inner {
-    width: 94%;
     margin: 0 auto;
   }
   ul li {
@@ -536,6 +536,10 @@ footer a:hover {
   background-position: center;
   background-size: contain;
   @include ratio-height(1, 1);
+
+  @media (max-width: 800px) {
+    left: -12.5%;
+  }
 
   &::before {
     content: '';
