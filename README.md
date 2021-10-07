@@ -1,4 +1,4 @@
-<img src="https://bogstandard.github.io/lapland-golf-club/assets/images/logo.svg" width="300" height="300" align="right">
+<img src="https://bogstandard.github.io/lapland-golf-club/assets/images/logo.svg" width="180" height="180" align="right">
 
 # Lapland Golf Course
 
