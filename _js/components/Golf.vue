@@ -22,9 +22,6 @@
       return {
         players: window.players || []
       }
-    },
-    mounted() {
-        console.log('Component mounted.')
     }
   };
 </script>
