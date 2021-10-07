@@ -18,6 +18,10 @@
         </div>
       </div>
 
+      <div class="card__row" v-if="broken">
+        <div class="card__cell">Something is wrong with this scorecard, check club config</div>
+      </div>
+
       <div class="card__row">
         <div class="card__heading">No.</div>
         <div class="card__heading">Score</div>
@@ -27,9 +31,14 @@
 
       <div class="card__row" v-bind:class="{'card__row--worse': hole.worse}" v-for="(hole, i) in holes" :key="i" @click="showSolution(hole)">
         <div class="card__cell">{{ hole.label }}</div>
-        <div class="card__cell">{{ hole.score }}</div>
-        <div class="card__cell">{{ hole.runningTotal }}</div>
-        <div class="card__cell">{{ i ? hole.runningAverage : hole.score }}</div>
+        <template v-if="hole.broken">
+          <div class="card__cell">Something is wrong with this solution, check scorecard</div>
+        </template>
+        <template v-if="!hole.broken">
+          <div class="card__cell">{{ hole.score }}</div>
+          <div class="card__cell">{{ hole.runningTotal }}</div>
+          <div class="card__cell">{{ i ? hole.runningAverage : hole.score }}</div>
+        </template>
       </div>
 
     </div>
@@ -59,6 +68,7 @@
       },
       data() {
         return {
+          broken: false,
           incoming: 0,
           holes: [
 
@@ -107,11 +117,17 @@
         this.tilt =  (Math.random() * 1.5) * (Math.round(this.index % 2 == 0) ? 1 : -1);
 
         // Fetch Scorecard
-        let scres = await fetch(`https://raw.githubusercontent.com/${this.path}`);
-        scres = await scres.text();
+        let scres;
+        try {
+          scres = await fetch(`https://raw.githubusercontent.com/${this.path}`);
+          if (!scres.ok) throw new Error(scres.statusText);
+          scres = await scres.text();
+        } catch (err) {
+          this.broken = true;
+        }
 
         // Parse Scorecard
-        const holes = scres.split('\n')
+        const holes = this.broken ? [] : scres.split('\n')
                       .map(line => line.trim())
                       .filter(line => line.length && !(line.startsWith('#') || line.startsWith('//') || line.startsWith('@')))
                       .map(line => {
@@ -130,10 +146,19 @@
             // Tally up!
             for (let h of holes) {
               let lang = this.getLang(h.path);
+              let broken = false;
               this.langs[lang] = ++this.langs[lang] || 1;
-              let hres = await fetch(`https://raw.githubusercontent.com/${this.dir}${h.path}`);
-              hres = await hres.text();
-              const cured = hres.split('\n')
+
+              let hres;
+              try {
+                hres = await fetch(`https://raw.githubusercontent.com/${this.dir}${h.path}`);
+                if (!hres.ok) throw new Error(hres.statusText);
+                hres = await hres.text();
+              } catch (err) {
+                broken = true;
+              }
+
+              const cured = broken ? '' : hres.split('\n')
                                .map(line => line.trim())
                                .filter(line => line.length && !(line.startsWith('#') || line.startsWith('//')))
                                .join('');
@@ -145,9 +170,10 @@
                   original: hres,
                   cured: cured,
                   score: cured.length,
-                  runningTotal: this.total+=cured.length,
-                  runningAverage: this.average=parseInt(this.total / (this.holes.length + 1)),
-                  worse: this.index > 0 && lastAverage < this.average
+                  runningTotal: broken ? this.total : this.total+=cured.length,
+                  runningAverage: broken ? this.average : this.average=parseInt(this.total / (this.holes.length + 1)),
+                  worse: this.index > 0 && lastAverage < this.average,
+                  broken: broken
               });
             }
       },
