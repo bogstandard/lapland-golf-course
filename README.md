@@ -8,7 +8,7 @@ This custom Jekyll theme gets pulled in via Github Pages & operates as an automa
 
 ## Establishing a Club
 
-Fork or Clone the [Lapland Golf Club repository](https://github.com/bogstandard/lapland-golf-club), remove any directories you don't need, then edit `index.md`, `README.md` and **most importantly** `_config.yml` to your liking and to match your desired players. This config can be updated at any time, so don't stress it too much. 
+Fork or Clone the [Lapland Golf Club repository](https://github.com/bogstandard/lapland-golf-club), remove any directories you don't need, then edit `index.md`, `README.md` and **most importantly** `_config.yml` to your liking and to match your desired players. This config can be updated at any time, so don't stress it too much.
 
 Then activate Github Pages for the repository with Jekyll toggled. Your edited `_config.yml` will provide the body copy & player information.
 
@@ -34,7 +34,7 @@ To set up your environment to develop this theme, run `bundle install`.
 
 Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
 
-We are also using Laravel Mix for the Javascript compiling, ensure you run `npm mix watch` at the same time as above.
+We are also using Laravel Mix for the Javascript compiling, ensure you run `npx mix watch` at the same time as above.
 
 ## License
 
