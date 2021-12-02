@@ -172,6 +172,13 @@
                   runningAverage: broken ? this.average : this.average=parseInt(this.total / (this.holes.length + 1)),
                   broken: broken
               });
+
+              this.$emit('update', {
+                holes: this.holes,
+                index: this.index,
+                average: this.average,
+                total: this.total
+              });
             }
       },
       computed: {
