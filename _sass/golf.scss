@@ -18,6 +18,10 @@
       transform: translate(6px, -20px) rotate(33deg);
       border-radius: 50%;
   }
+  
+  @media (orientation: portrait) {
+    transform: rotate(0deg) !important;
+  }
 }
 
 .card__row {
