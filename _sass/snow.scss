@@ -15,9 +15,6 @@
   width: 100%;
   height: 100%;
 
-  -webkit-animation: an-snow 20s linear infinite;
-  -moz-animation: an-snow 20s linear infinite;
-  -o-animation: an-snow 20s linear infinite;
   animation: an-snow 20s linear infinite;
 
   background-image: url(../images/snow.png), url(../images/snow2.png), url(../images/snow3.png);
@@ -30,21 +27,6 @@
   will-change: background-position;
 }
 
-@-webkit-keyframes an-snow {
-  100% {
-    background-position: 500px 1000px, 300px 300px, -400px 400px;
-  }
-}
-@-moz-keyframes an-snow {
-  100% {
-    background-position: 500px 1000px, 300px 300px, -400px 400px;
-  }
-}
-@-o-keyframes an-snow {
-  100% {
-    background-position: 500px 1000px, 300px 300px, -400px 400px;
-  }
-}
 @keyframes an-snow {
   100% {
     background-position: 500px 1000px, 300px 300px, -400px 400px;
