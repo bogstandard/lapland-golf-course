@@ -15,7 +15,7 @@
         </div>
 
         <div class="card__row"  v-for="(player, pos) in orderedPlayers">
-          <div class="card__cell card__cell--big">{{ pos+1 }}{{ [,'st','nd','rd'][n/10%10^1&&pos+1%10]||'th' }}</div>
+          <div class="card__cell card__cell--big">{{ pos+1 }}{{ [,'st','nd','rd'][10%10^1&&pos+1%10]||'th' }}</div>
           <div class="card__cell">
             {{ player.name }}
           </div>
@@ -29,7 +29,7 @@
       <vue-masonry-wall :items="players" :options="{width: 500, padding: 0}">
         <template v-slot:default="{item}">
           <div class="item">
-            <Card :username="item.username" :name="item.name" :target="item.url" :index="item.index" @update="handleUpdate" />
+            <Card :username="item.username" :name="item.name" :target="item.url" :index="item.index" @done="(data) => {handleUpdate(data, item.index)}" />
           </div>
         </template>
       </vue-masonry-wall>
@@ -40,28 +40,24 @@
 <script>
   import Card from './Card.vue';
   import VueMasonryWall from 'vue-masonry-wall';
+  import Vue from 'vue';
 
   export default {
     components: { Card, VueMasonryWall },
     data() {
       return {
-        players: []
+        players: window.players || [],
+        finalPlayers: []
       }
     },
-    created() {
-      this.players = JSON.parse(JSON.stringify(window.players));
-    },
     methods: {
-      handleUpdate(data) {
-        const player = this.players.find(p => p.index == data.index);
-        this.$set(player, 'holes', data.holes);
-        this.$set(player, 'average', data.average);
-        this.$set(player, 'total', data.total);
+      handleUpdate(data, index) {
+        this.finalPlayers.push(data);
       }
     },
     computed: {
       orderedPlayers: function () {
-        return this.players.sort((a, b) => {
+        return this.finalPlayers.sort((a, b) => {
           return (a.average > b.average) ? 1 : (a.average === b.average) ? ((a.total > b.total) ? 1 : -1) : -1
         });
       }
