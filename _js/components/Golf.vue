@@ -52,7 +52,9 @@
     },
     methods: {
       handleUpdate(data, index) {
-        this.finalPlayers.push(data);
+        if(this.finalPlayers.filter(p => p.index === data.index).length === 0) {
+          this.finalPlayers.push(data);
+        }
       }
     },
     computed: {

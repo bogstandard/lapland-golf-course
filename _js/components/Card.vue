@@ -191,6 +191,7 @@
           if(!newValue) {
             this.$emit('done', {
               name: this.name,
+              index: this.index,
               average: this.average,
               total: this.total
             });
