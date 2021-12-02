@@ -8,7 +8,7 @@
         </div>
 
         <div class="card__row">
-          <div class="card__heading">Rank</div>
+          <div class="card__heading card__heading--free">Rank</div>
           <div class="card__heading">Golfer</div>
           <div class="card__heading">Total</div>
           <div class="card__heading">Avg.</div>
