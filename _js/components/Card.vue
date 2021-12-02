@@ -114,12 +114,12 @@
       },
       async mounted() {
 
-        this.tilt =  (Math.random() * 1.5) * (Math.round(this.index % 2 == 0) ? 1 : -1);
+        this.tilt =  (Math.random() * 0.66) * (Math.round(this.index % 2 == 0) ? 1 : -1);
 
         // Fetch Scorecard
         let scres;
         try {
-          scres = await fetch(`https://raw.githubusercontent.com/${this.path}`);
+          scres = await fetch(`https://raw.githubusercontent.com/${this.path}`, {cache: 'no-store'});
           if (!scres.ok) throw new Error(scres.statusText);
           scres = await scres.text();
         } catch (err) {
@@ -151,7 +151,7 @@
 
               let hres;
               try {
-                hres = await fetch(`https://raw.githubusercontent.com/${this.dir}${h.path}`);
+                hres = await fetch(`https://raw.githubusercontent.com/${this.dir}${h.path}`, {cache: 'no-store'});
                 if (!hres.ok) throw new Error(hres.statusText);
                 hres = await hres.text();
               } catch (err) {
