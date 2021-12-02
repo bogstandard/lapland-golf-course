@@ -1,27 +1,20 @@
 ---
 title: Lapland Golf Club
 layout: default
+description: '~ Grand Opening! Welcome Golfers! ~'
 players:
-  - username: ''
-    name: 'Grounds Keeper'
+  - username: 'bogstandard'
+    name: 'Eric'
     index: 0
-    url: 'https://github.com/bogstandard/lapland-golf-club/blob/main/Keeper/.scorecard'
+    url: 'https://github.com/bogstandard/adventofcode2021/blob/main/.scorecard'
   - username: ''
     name: 'Ben'
     index: 1
-    url: 'https://github.com/Gerome/AdventOfCode2020/blob/main/Ben/.scorecard'
+    url: 'https://github.com/Jabenjy/AdventOfCode2021/blob/main/.scorecard'
   - username: 'gerome'
     name: 'Gerome'
     index: 2
-    url: 'https://github.com/Gerome/AdventOfCode2020/blob/main/Gerome/.scorecard'
-  - username: ''
-    name: 'Joe'
-    index: 3
-    url: 'https://github.com/Gerome/AdventOfCode2020/blob/main/Joe/.scorecard'
-  - username: 'bogstandard'
-    name: 'Eric'
-    index: 4
-    url: 'https://github.com/Gerome/AdventOfCode2020/blob/main/Eric/.scorecard'
+    url: 'https://github.com/Gerome/Advent-of-code-2021/blob/main/.scorecard'
 ---
 
 ## Welcome to the club
