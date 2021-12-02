@@ -29,7 +29,7 @@
         <div class="card__heading">Avg.</div>
       </div>
 
-      <div class="card__row" v-bind:class="{'card__row--worse': hole.worse}" v-for="(hole, i) in holes" :key="i" @click="showSolution(hole)">
+      <div class="card__row" v-for="(hole, i) in holes" :key="i" @click="showSolution(hole)">
         <div class="card__cell">{{ hole.label }}</div>
         <template v-if="hole.broken">
           <div class="card__cell">Something is wrong with this solution, check scorecard</div>
@@ -163,8 +163,6 @@
                                .filter(line => line.length && !(line.startsWith('#') || line.startsWith('//')))
                                .join('');
 
-              const lastAverage = this.average;
-
               this.holes.push({
                   label: h.label,
                   original: hres,
@@ -172,7 +170,6 @@
                   score: cured.length,
                   runningTotal: broken ? this.total : this.total+=cured.length,
                   runningAverage: broken ? this.average : this.average=parseInt(this.total / (this.holes.length + 1)),
-                  worse: this.index > 0 && lastAverage < this.average,
                   broken: broken
               });
             }
