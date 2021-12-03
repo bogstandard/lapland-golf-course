@@ -6,9 +6,10 @@
     z-index: 1;
   }
 
-  &::before {
+  &::before,
+  .inner::before {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -16,23 +17,24 @@
     background-image: url('../images/glass.svg');
     background-size: cover;
     z-index: 0;
-    animation: lights-pulse 6s infinite alternate-reverse, lights-shift 30s infinite linear alternate-reverse;
-    will-change: background-position, opacity;
+    animation: lights-pulse 6s infinite alternate-reverse;
+    will-change: opacity;
   }
-}
 
-@keyframes lights-shift {
-  100% {
-    background-position: 200px 600px, 300px 300px, -300px 400px;
+  .inner::before {
+    width: 150%;
+    height: 150%;
+    transform: scaleX(-1);
+    animation: lights-pulse 10s infinite alternate-reverse;
   }
 }
 
 @keyframes lights-pulse {
   from {
-    opacity: .3;
+    opacity: .2;
   }
 
   to {
-    opacity: .5;
+    opacity: .3;
   }
 }
