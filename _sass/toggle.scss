@@ -1,5 +1,6 @@
 .toggle {
   position: relative;
+  z-index: 4;
 
   input[type=checkbox] { /* styling for input element */
       height: 0;
