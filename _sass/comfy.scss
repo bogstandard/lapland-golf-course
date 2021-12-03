@@ -1,3 +1,7 @@
+body {
+  transition: background-image .5s, background-color .5s, color .5s;
+}
+
 body[data-theme='comfy'] {
   background-image: linear-gradient(to bottom, rgba(#243757, 1), rgba(#243757, .6)), url(../images/body-bg.png);
   background-color: rgba(#243757, 1);

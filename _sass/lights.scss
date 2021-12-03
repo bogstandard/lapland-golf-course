@@ -19,6 +19,7 @@
     z-index: 0;
     animation: lights-pulse 6s infinite alternate-reverse;
     will-change: opacity;
+    pointer-events: none;
   }
 
   .inner::before {
