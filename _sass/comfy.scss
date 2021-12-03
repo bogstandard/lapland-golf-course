@@ -50,7 +50,12 @@ body[data-theme='comfy'] {
     color: skyblue;
   }
 
-  .comfy {
+  .card,
+  .swal2-popup {
     background-image: url(../images/body-bg.png);
+  }
+
+  .swal2-title {
+    color: #333;
   }
 }
