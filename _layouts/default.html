@@ -15,7 +15,12 @@
     <title>{{ site.title | default: page.title | default: site.github.repository_name }}</title>
   </head>
 
-  <body class="lights">
+  <body class="lights comfy">
+
+    <div class="toggle">
+      <input type="checkbox" id="switch" name="theme" /><label for="switch">Toggle Theme</label>
+    </div>
+
     <div id="container" class="ag-snow">
       <div class="inner">
 

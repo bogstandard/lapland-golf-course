@@ -1,0 +1,52 @@
+body[data-theme='comfy'] {
+  background-image: linear-gradient(to bottom, rgba(#243757, 1), rgba(#243757, .6)), url(../images/body-bg.png);
+  background-color: rgba(#243757, 1);
+  box-shadow: 0 0 50px 50px inset rgba(#fff, .1);
+  text-shadow: none;
+  color: #fff;
+
+  .logo {
+    &:before {
+      background-image: linear-gradient(33deg, rgb(255, 232, 100), rgba(rgb(252, 244, 175), 0.5));
+    }
+  }
+
+  .big-title {
+    color: lightcyan;
+
+    &:before {
+      color: skyblue;
+    }
+
+    &:after {
+      color: lightcyan;
+    }
+  }
+
+  code,
+  pre {
+    color: skyblue;
+  }
+
+  a {
+    color: goldenrod;
+    font-style: italic;
+
+    &:focus,
+    &:hover {
+      color: gold;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: skyblue;
+  }
+
+  .comfy {
+    background-image: url(../images/body-bg.png);
+  }
+}

@@ -3,22 +3,22 @@
     <radialGradient id="radial-gradient" cx="0.492" cy="0.461" r="0.502" gradientTransform="translate(-0.005 0.005) rotate(-0.564)" gradientUnits="objectBoundingBox">
       <stop offset="0" stop-color="#251c5d"/>
       <stop offset="0" stop-color="#f74d6b"/>
-      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#f74d6b" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="radial-gradient-2" cx="0.492" cy="0.461" r="0.502" gradientTransform="translate(-0.005 0.005) rotate(-0.564)" gradientUnits="objectBoundingBox">
       <stop offset="0" stop-color="#251c5d"/>
       <stop offset="0" stop-color="#58939d"/>
-      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#f74d6b" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="radial-gradient-3" cx="0.492" cy="0.461" r="0.502" gradientTransform="translate(-0.005 0.005) rotate(-0.564)" gradientUnits="objectBoundingBox">
-      <stop offset="0" stop-color="#291f62" stop-opacity="0.588"/>
-      <stop offset="0" stop-color="#2c2362"/>
-      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="0" stop-color="#f74d6b" stop-opacity="0.588"/>
+      <stop offset="0" stop-color="#f74d6b"/>
+      <stop offset="1" stop-color="#f74d6b" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="radial-gradient-4" cx="0.492" cy="0.461" r="0.502" gradientTransform="translate(-0.005 0.005) rotate(-0.564)" gradientUnits="objectBoundingBox">
       <stop offset="0" stop-color="#f74d6b"/>
-      <stop offset="0" stop-color="#a8ced5"/>
-      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="0" stop-color="#f74d6b"/>
+      <stop offset="1" stop-color="#f74d6b" stop-opacity="0"/>
     </radialGradient>
     <clipPath id="clip-path">
       <path id="Path_9083" data-name="Path 9083" d="M0,135.063H428.482v-231.3H0Z" transform="translate(0 96.233)" fill="#fff"/>
