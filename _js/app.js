@@ -86,6 +86,6 @@ const app = new Vue({
   }
 
   door.textContent = day;
-  backdoor.style.backgroundImage = `url(/assets/images/advents/${images[day-1]})`;
+  backdoor.style.backgroundImage = `url(${window.relative_url}assets/images/advents/${images[day-1]})`;
 
 
