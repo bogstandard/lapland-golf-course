@@ -49,34 +49,6 @@ const app = new Vue({
     advent.classList.toggle('doorOpen');
   });
 
-  const images = [
-    '1.png',
-    '2.png',
-    '3.png',
-    '4.png',
-    '5.png',
-    '6.pn',
-    '7.png',
-    '8.jpg',
-    '9.jpg',
-    '10.png',
-    '11.jpg',
-    '12.jpeg',
-    '13.jpg',
-    '14.jpg',
-    '15.jpg',
-    '16.jpg',
-    '17.png',
-    '18.jpeg',
-    '19.jpg',
-    '20.gif',
-    '21.png',
-    '22.jpg',
-    '23.jpg',
-    '24.jpg',
-    '25.png',
-  ];
-
   const month = new Date().getMonth();
   let day = new Date().getDate();
   if(month == 11 && day >= 1 && day <= 25) {
@@ -85,7 +57,13 @@ const app = new Vue({
     day = 25;
   }
 
-  door.textContent = day;
-  backdoor.style.backgroundImage = `url(${window.relative_url}assets/images/advents/${images[day-1]})`;
+  const img = new Image();
+  img.onload = () => {
+    advent.classList.add('is-visible');
+    door.textContent = day;
+    backdoor.style.backgroundImage = `url("/assets/images/advents/${day-1}.png")`;
+  };
+  img.onerror = ()=>{};
+  img.src = `/assets/images/advents/${day-1}.png`;
 
 
