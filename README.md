@@ -24,6 +24,12 @@ The player must fill out their `.scorecard` when they've completed a solution, t
 
 Leading & trailing whitespace is trimmed from each line of a solution, the characters are counted. Lines beginnning with `#` or `//` are not counted. It's recommended players **do not** leave comments at the ends of lines as these will be counted.
 
+### Extra Features
+
+A **Light and Dark mode** is included with the club, these include snow and soft furnishings.
+
+An optional Advent calendar of club specific images is avaliable, if you [provide the correct PNGs for the advent days](https://github.com/bogstandard/lapland-golf-club/tree/main/assets/images/advents) in your club repo this will appear to users.
+
 ## Contributing
 
 Bug reports and pull requests are welcome. This project is intended to be a safe, welcoming space for collaboration, however contributors are not currently expected to adhere to a code of conduct. Just imagine you're in a very comfortable clubhouse and conduct yourself accordingly.
