@@ -26,13 +26,13 @@ Leading & trailing whitespace is trimmed from each line of a solution, the chara
 
 #### The Club Scoreboard
 
-Players are ranked on the following algorithm `(1/players_challenges_done)*players_average_score`, with the lowest scoring player being ranked 1st place. This algorithm is used to prevent slower player ranking better with their consequental lower averages.
+Players are ranked on the following algorithm `(1/their_challenges_done)*their_average_score`. The lower the result, the closer to 1st place. This algorithm is used to prevent slower player ranking better by keeping their average low by way of not completing challenges.
 
 ### Extra Features
 
 A **Light and Dark mode** is included with the club, these include snow and soft furnishings.
 
-An optional Advent calendar of club specific images is avaliable, if you [provide the correct PNGs for the advent days](https://github.com/bogstandard/lapland-golf-club/tree/main/assets/images/advents) in your club repo this will appear to users.
+An optional **Advent calendar** of club specific images is avaliable, if you [provide the correct PNGs for the advent days](https://github.com/bogstandard/lapland-golf-club/tree/main/assets/images/advents) in your club repo this will appear to users.
 
 ## Contributing
 
