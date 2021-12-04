@@ -10,7 +10,7 @@
         <div class="card__row">
           <div class="card__heading card__heading--free">Rank</div>
           <div class="card__heading">Golfer</div>
-          <div class="card__heading">Total</div>
+          <div class="card__heading">Score</div>
           <div class="card__heading">Avg.</div>
         </div>
 
@@ -19,7 +19,7 @@
           <div class="card__cell">
             {{ player.name }}
           </div>
-          <div class="card__cell">{{ player.total }}</div>
+          <div class="card__cell">{{ player.score }}</div>
           <div class="card__cell">{{ player.average }}</div>
 
         </div>
@@ -40,7 +40,6 @@
 <script>
   import Card from './Card.vue';
   import VueMasonryWall from 'vue-masonry-wall';
-  import Vue from 'vue';
 
   export default {
     components: { Card, VueMasonryWall },
@@ -60,7 +59,7 @@
     computed: {
       orderedPlayers: function () {
         return this.finalPlayers.sort((a, b) => {
-          return (a.average > b.average) ? 1 : (a.average === b.average) ? ((a.total > b.total) ? 1 : -1) : -1
+          return (a.score > b.score) ? 1 : (a.score === b.score) ? ((a.average > b.average) ? 1 : -1) : -1
         });
       }
     }

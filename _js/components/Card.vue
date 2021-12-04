@@ -24,7 +24,7 @@
 
       <div class="card__row">
         <div class="card__heading">No.</div>
-        <div class="card__heading">Score</div>
+        <div class="card__heading">Swings</div>
         <div class="card__heading">Total</div>
         <div class="card__heading">Avg.</div>
       </div>
@@ -35,9 +35,9 @@
           <div class="card__cell">Something is wrong with this solution, check scorecard</div>
         </template>
         <template v-if="!hole.broken">
-          <div class="card__cell">{{ hole.score }}</div>
+          <div class="card__cell">{{ hole.chars }}</div>
           <div class="card__cell">{{ hole.runningTotal }}</div>
-          <div class="card__cell">{{ i ? hole.runningAverage : hole.score }}</div>
+          <div class="card__cell">{{ i ? hole.runningAverage : hole.chars }}</div>
         </template>
       </div>
 
@@ -167,7 +167,7 @@
                   label: h.label,
                   original: hres,
                   cured: cured,
-                  score: cured.length,
+                  chars: cured.length,
                   runningTotal: broken ? this.total : this.total+=cured.length,
                   runningAverage: broken ? this.average : this.average=parseInt(this.total / (this.holes.length + 1)),
                   broken: broken
@@ -193,7 +193,8 @@
               name: this.name,
               index: this.index,
               average: this.average,
-              total: this.total
+              total: this.total,
+              score: parseInt((1/this.holes.length) * this.average)
             });
           }
         }
