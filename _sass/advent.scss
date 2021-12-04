@@ -18,7 +18,7 @@
 
   .backDoor
   {
-    transition: box-shadow .5s, opacity .33s;
+    transition: box-shadow .5s, opacity .33s, border-radius .33s;
     box-shadow: 0 0 0px 0 rgba(#000, .5) inset;
     opacity: 0;
     border-radius: 10px;
@@ -50,7 +50,7 @@
     font-style: italic;
     transform-origin: left;
     /*Speed of the Door animation*/
-    transition: transform 0.5s ease-in-out,
+    transition: transform 0.5s ease-in-out, border-radius 0.5s ease-in-out,
     color 0.5s ease-in-out,
     filter 0.5s ease-in-out,
     border-color 0.5s ease-in-out,
@@ -64,7 +64,8 @@
   {
     opacity: 1;
     box-shadow: 0 0 10px 0 rgba(#000, .5) inset;
-    transition: box-shadow .5s, opacity .33s .33s;
+    transition: box-shadow .5s, opacity .33s .33s, border-radius .33s;
+    border-radius: 0 10px 10px 0;
   }
 
   &.doorOpen .door
@@ -75,11 +76,12 @@
     border-color: transparent;
     background-color: rgba($color: #efefef, $alpha: .9);
     filter: brightness(70%);
-    transition: transform 0.5s ease-in-out,
+    transition: transform 0.5s ease-in-out, border-radius 0.5s ease-in-out,
     color 0.5s ease-in-out,
     filter 0.33s ease-in-out .1s,
     border-color 0.5s ease-in-out,
     background-color 0.5s ease-in-out;
+    border-radius: 3px 10px 10px 5px;
 
     body[data-theme='comfy'] & {
       background-color: rgba(#243757, .8);

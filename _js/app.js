@@ -61,9 +61,9 @@ const app = new Vue({
   img.onload = () => {
     advent.classList.add('is-visible');
     door.textContent = day;
-    backdoor.style.backgroundImage = `url("/assets/images/advents/${day-1}.png")`;
+    backdoor.style.backgroundImage = `url("./assets/images/advents/${day}.png")`;
   };
   img.onerror = ()=>{};
-  img.src = `/assets/images/advents/${day-1}.png`;
+  img.src = `./assets/images/advents/${day}.png`;
 
 
