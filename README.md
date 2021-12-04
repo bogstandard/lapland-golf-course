@@ -24,6 +24,10 @@ The player must fill out their `.scorecard` when they've completed a solution, t
 
 Leading & trailing whitespace is trimmed from each line of a solution, the characters are counted. Lines beginnning with `#` or `//` are not counted. It's recommended players **do not** leave comments at the ends of lines as these will be counted.
 
+#### The Club Scoreboard
+
+Players are ranked on the following algorithm `(1/players_challenges_done)*players_average_score`, with the lowest scoring player being ranked 1st place. This algorithm is used to prevent slower player ranking better with their consequental lower averages.
+
 ### Extra Features
 
 A **Light and Dark mode** is included with the club, these include snow and soft furnishings.
