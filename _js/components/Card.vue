@@ -9,7 +9,7 @@
 
       <img v-if="username.length" :src="`https://github.com/${username}.png?size=100`" alt="">
 
-      <div class="card__row" @click="showTarget">
+      <div class="card__row is-clickable" @click="showTarget">
         <div class="card__cell">
           {{ name }}
 
@@ -29,7 +29,7 @@
         <div class="card__heading">Avg.</div>
       </div>
 
-      <div class="card__row" v-for="(hole, i) in holes" :key="i" @click="showSolution(hole)">
+      <div class="card__row is-clickable" v-for="(hole, i) in visibleHoles" :key="i" @click="showSolution(hole)">
         <div class="card__cell">{{ hole.label }}</div>
         <template v-if="hole.broken">
           <div class="card__cell">Something is wrong with this solution, check scorecard</div>
@@ -40,6 +40,11 @@
           <div class="card__cell">{{ i ? hole.runningAverage : hole.chars }}</div>
         </template>
       </div>
+
+      <div class="card__row card__row--space" v-if="holes.length > visibleHoles.length">
+        <div class="card__cell card__cell--btn" @click="() => {this.collapsed=false}">{{ holes.length - visibleHoles.length }} older scores hidden, tap to show all</div>
+      </div>
+
 
     </div>
 </template>
@@ -64,6 +69,14 @@
         target: {
           type: String,
           default: ""
+        },
+        collapsed: {
+          type: Boolean,
+          default: true
+        },
+        initialVisible: {
+          type: Number,
+          default: 8
         }
       },
       data() {
@@ -76,7 +89,7 @@
           total: 0,
           average: 0,
           tilt: 0,
-          langs: {}
+          langs: {},
         }
       },
       methods: {
@@ -184,6 +197,13 @@
         },
         isLoading: function() {
           return this.holes.length < this.incoming;
+        },
+        visibleHoles: function() {
+          if (this.collapsed) {
+            return this.holes.slice(-this.initialVisible);
+          } else {
+            return this.holes
+          }
         }
       },
       watch: {

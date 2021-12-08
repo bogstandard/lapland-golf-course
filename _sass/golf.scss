@@ -32,8 +32,12 @@
   height: 50px;
   margin-bottom: 10px;
   border-radius: 5px;
-  cursor: pointer;
   gap: 10px;
+
+  &--space {
+    margin-top: 13px;
+    margin-bottom: 13px;
+  }
 }
 
 .card__cell,
@@ -62,6 +66,27 @@
 
   &--free {
     min-width: 0 !important;
+  }
+
+  &--btn {
+    background: repeating-linear-gradient(
+      45deg,
+      white,
+      white 10px,
+      #EDF3EC 10px,
+      #EDF3EC 20px
+    );
+    text-align: center;
+    justify-content: center !important;
+    border: 0;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: box-shadow .33s;
+    font-family: 'Helvetica Neue', Helvetica, Arial, serif;
+    font-style: italic;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.33);
+    cursor: pointer;
   }
 }
 
