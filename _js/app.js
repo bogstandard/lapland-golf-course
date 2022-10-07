@@ -57,10 +57,31 @@ if (month == 11 && day >= 1 && day <= 25) {
 }
 
 const img = new Image();
+
+const srcs = [
+  `./assets/images/advents/${day}.png`,
+  `./assets/images/advents/${day}.jpg`,
+  `./assets/images/advents/${day}.jpeg`,
+  `./assets/images/advents/${day}.gif`,
+];
+
+let srci = 1;
+
+img.onerror = () => {
+  if (srci >= srcs.length) {
+    img.onerror = null;
+    return;
+  }
+  let next = srcs[srci];
+  img.src = next;
+  srci++;
+};
+
 img.onload = () => {
+  img.onerror = null;
   advent.classList.add('is-visible');
   door.textContent = day;
-  backdoor.style.backgroundImage = `url("./assets/images/advents/${day}.png")`;
+  backdoor.style.backgroundImage = `url(${img.src})`;
 };
-img.onerror = () => {};
-img.src = `./assets/images/advents/${day}.png`;
+
+img.src = srcs[0];
