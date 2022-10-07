@@ -89,6 +89,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
@@ -125,7 +126,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       total: 0,
       average: 0,
       tilt: 0,
-      langs: {}
+      langs: {},
+      firstComment: null
     };
   },
   methods: {
@@ -154,6 +156,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }).length > 0;
       });
       return matches.length > 0 ? matches[0].name : 'Unknown';
+    },
+    truncate: function truncate(str, n) {
+      return str.length > n ? str.slice(0, n - 1) + '...' : str;
     }
   },
   mounted: function mounted() {
@@ -202,6 +207,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               // Parse Scorecard
               holes = _this.broken ? [] : scres.split('\n').map(function (line) {
                 return line.trim();
+              }).map(function (line) {
+                // check for any first comments
+                if (line.startsWith('#') && _this.firstComment === null) {
+                  _this.firstComment = line.substring(1).trim();
+                }
+
+                return line;
               }).filter(function (line) {
                 return line.length && !(line.startsWith('#') || line.startsWith('//') || line.startsWith('@'));
               }).map(function (line) {
@@ -18981,6 +18993,12 @@ var render = function() {
     "div",
     { staticClass: "card", style: "transform: rotate(" + _vm.tilt + "deg);" },
     [
+      _vm.firstComment
+        ? _c("div", { staticClass: "card__bubble" }, [
+            _vm._v(_vm._s(_vm.truncate(_vm.firstComment, 40)))
+          ])
+        : _vm._e(),
+      _vm._v(" "),
       _c("div", {
         staticClass: "loading-bar",
         class: { visible: _vm.isLoading },
@@ -18998,14 +19016,15 @@ var render = function() {
         0
       ),
       _vm._v(" "),
-      _vm.username.length
-        ? _c("img", {
-            attrs: {
-              src: "https://github.com/" + _vm.username + ".png?size=100",
-              alt: ""
-            }
-          })
-        : _vm._e(),
+      _c("img", {
+        staticStyle: { width: "100px" },
+        attrs: {
+          src: _vm.username.length
+            ? "https://github.com/" + _vm.username + ".png?size=100"
+            : "./assets/images/octocat.png",
+          alt: ""
+        }
+      }),
       _vm._v(" "),
       _c(
         "div",

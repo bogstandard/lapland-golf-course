@@ -1,5 +1,6 @@
 <template>
     <div class="card" :style="`transform: rotate(${tilt}deg);`">
+      <div class="card__bubble" v-if="firstComment">{{ truncate(firstComment, 40) }}</div>
       <div class="loading-bar" :class="{'visible': isLoading}" :style="`width: ${(100 * holes.length) / incoming}%;`"></div>
 
       <div class="card__langs">
@@ -7,7 +8,7 @@
       </div>
 
 
-      <img v-if="username.length" :src="`https://github.com/${username}.png?size=100`" alt="">
+      <img :src="username.length ? `https://github.com/${username}.png?size=100` : './assets/images/octocat.png'" alt="" style="width: 100px;">
 
       <div class="card__row is-clickable" @click="showTarget">
         <div class="card__cell">
@@ -90,13 +91,14 @@
           average: 0,
           tilt: 0,
           langs: {},
+          firstComment: null
         }
       },
       methods: {
-        showTarget: function() {
+        showTarget() {
           window.location.href = this.target;
         },
-        showSolution: function(hole) {
+        showSolution(hole) {
           const santizedText = hole.original.replace(/&/g, '&amp;')
                                             .replace(/</g, '&lt;')
                                             .replace(/>/g, '&gt;')
@@ -123,6 +125,9 @@
             }).length > 0;
           });
           return matches.length > 0 ? matches[0].name : 'Unknown';
+        },
+        truncate(str, n) {
+          return (str.length > n) ? str.slice(0, n-1) + '...' : str;
         }
       },
       async mounted() {
@@ -142,6 +147,13 @@
         // Parse Scorecard
         const holes = this.broken ? [] : scres.split('\n')
                       .map(line => line.trim())
+                      .map(line => { // check for any first comments
+                        if(line.startsWith('#') && this.firstComment === null) {
+                          this.firstComment = line.substring(1).trim();
+                        }
+
+                        return line;
+                      })
                       .filter(line => line.length && !(line.startsWith('#') || line.startsWith('//') || line.startsWith('@')))
                       .map(line => {
                         const parts = line.split(':').map(p => p.trim());
