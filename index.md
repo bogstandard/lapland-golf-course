@@ -2,6 +2,8 @@
 title: Lapland Golf Club
 layout: default
 description: '~ Grand Opening! Welcome Golfers! ~'
+scripts:
+  - extraScript
 players:
   - username: 'bogstandard'
     name: 'Eric'
